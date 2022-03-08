@@ -27,20 +27,20 @@ class Header extends Component {
                   <NavDropdown.Item href="#action/3.3">Obrisi muzej</NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown title="Izlozbene sale" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Prikazi sale</NavDropdown.Item>
+                  <NavDropdown.Item href="/auditoriums">Prikazi sale</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.2">Dodaj salu</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Izmeni salu</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.4">Obrisi salu</NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown title="Izlozbe" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Prikazi izlozbe</NavDropdown.Item>
+                  <NavDropdown.Item href="/exhibitions">Prikazi izlozbe</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.2">Dodaj izlozbu</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.4">Obrisi izlozbu</NavDropdown.Item>
                 </NavDropdown>
                 <NavDropdown title="Eksponati" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Prikazi eksponate</NavDropdown.Item>
+                  <NavDropdown.Item href="/exhibits">Prikazi eksponate</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.2">Dodaj eksponat</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Izmeni eksponat</NavDropdown.Item>

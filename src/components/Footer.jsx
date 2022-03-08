@@ -17,17 +17,17 @@ class Footer extends Component{
               <div class="container">
                 <div class="row">
                   <div class="col-sm-12 col-md-6">
-                    <h6>O muzeju</h6>
+                    <h6>Zanimljivosti</h6>
                     <p class="text-justify">Unutar zbirki pet odeljenja Muzeja smešteno je preko 33.000 muzejskih predmeta a pomenućemo samo nekoliko najznačajnijih zbirki: zbirka hladnog i vatrenog oružja, zbirka kapa zlatara, likovna zbirka sa značajnim fondom slika iz XVIII i XIX veka, zbirka nakita iz praistorije i srednjeg veka, zbirka ptica. Muzej ima i Pedagoško-informativnu službu, Dokumentacioni centar, restauratorsku i konzervatorsku radionicu, fotografsko odeljenje kao i stolarsku radionicu. U Muzeju postoji i stručna biblioteka sa preko 5.000 naslova.</p>
                   </div>
         
                   <div class="col-sm-6 col-md-6">
                     <h6>Kategorije sajta</h6>
                     <ul class="footer-links">
-                      <li><a href="#">Muzeji</a></li>
-                      <li><a href="#">Izlozbene sale</a></li>
-                      <li><a href="#">Izlozbe</a></li>
-                      <li><a href="#">Eksponati</a></li>
+                      <li><a href="/museums">Muzeji</a></li>
+                      <li><a href="/auditoriums">Izlozbene sale</a></li>
+                      <li><a href="/exhibitions">Izlozbe</a></li>
+                      <li><a href="/exhibits">Eksponati</a></li>
                     </ul>
                   </div>
                 </div>

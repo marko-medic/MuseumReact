@@ -75,6 +75,18 @@
   padding-right: 150px;
   text-shadow: 2px 1px grey;
 }
+.heading {
+  text-align: center;
+  text-transform: uppercase;
+  color: rgb(44, 42, 42);
+  font-size: 30px;
+  font-family: "Cabin", sans-serif;
+  font-weight: 200;
+  padding-top: 80px;
+  padding-left: 150px;
+  padding-right: 150px;
+  text-shadow: 2px 1px grey;
+}
 
 .image-left-padding {
   padding-left: 150px;
@@ -119,6 +131,17 @@
   padding-right: 150px;
   padding-bottom: 40px;
   text-align: justify;
+}
+.text-home {
+  text-align: justify;
+  color: black;
+  font-size: 18px;
+  font-family: "Cabin", sans-serif;
+  font-weight: 400;
+  padding-top: 10px;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 40px;
 }
 
 /* F O O T E R */
@@ -184,6 +207,36 @@
 .copyright-text {
   margin: 0;
 }
+
+/************ Card Content *******/
+.card-content {
+  margin: 3%;
+}
+.card-body {
+  background: rgb(68, 68, 68);
+  background: linear-gradient(
+    144deg,
+    rgba(68, 68, 68, 1) 0%,
+    rgba(210, 210, 210, 1) 49%,
+    rgba(80, 80, 80, 1) 90%
+  );
+}
+
+.card-footer {
+  color: #3366cc;
+}
+
+.card-group-stil {
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+.adding-padding {
+  margin: 2%;
+}
+
 @media (max-width: 991px) {
   .site-footer [class^="col-"] {
     margin-bottom: 30px;

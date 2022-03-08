@@ -3,25 +3,25 @@ import { NotificationManager } from 'react-notifications';
 import { serviceConfig } from "../../../appSettings";
 import { Container, Card, CardGroup, Button,ResponsiveEmbed, CardDeck} from 'react-bootstrap';
 
-class AllMuseums extends Component {
+class AllAuditoriums extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        museums: []
+        auditoriums: []
       };
     }
 
     componentDidMount() {
-       this.getMuseums();
+       this.getAuditoriums();
     }
 
-    getMuseums() {
+    getAuditoriums() {
       const requestOptions = {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
       };
 
-      fetch(`${serviceConfig.baseURL}/api/Museums`, requestOptions)
+      fetch(`${serviceConfig.baseURL}/api/Auditoriums`, requestOptions)
         .then(response => {
           if (!response.ok) {
             return Promise.reject(response);
@@ -32,7 +32,7 @@ class AllMuseums extends Component {
           NotificationManager.success('Successfuly fetched data');
           if (data) {
             this.setState({ 
-              museums: data,
+                auditoriums: data,
                  isLoading: false });
             }
         })
@@ -42,19 +42,18 @@ class AllMuseums extends Component {
         });
     }
 
-    getAllMuseums() {
+    getAllAuditoriums() {
       console.log(this.state);
-      return this.state.museums.map(museum => {
-          return <Card key={museum.id} className="card-content">
-    <Card.Img variant="top" src="http://www.fashionela.net/wp-content/uploads/2014/12/Louvre-Museum-5.jpg" height="500"/>
+      return this.state.auditoriums.map(auditorium => {
+          return <Card key={auditorium.id} className="card-content">
+    <Card.Img variant="top" src="https://rs.n1info.com/wp-content/uploads/2020/11/muzej-jugoslavije-346472.jpeg" height="500"/>
     <Card.Body>
-      <Card.Title>{museum.name}</Card.Title>
-      <Card.Text>Adresa: {museum.address}, {museum.city}</Card.Text>
-     <Card.Text>Email: {museum.email}</Card.Text>
-      <Card.Text>Telefon: {museum.phone}</Card.Text>
+      <Card.Title>{auditorium.name}</Card.Title>
+      <Card.Text><b>Cena iznajmljivanja izlozbene sale:</b></Card.Text>
+     <Card.Text>Izložbena sala: Za izložbe u trajanju od 10 dana cena je 50.000,00 dinara.<br></br> Za skupove prvi sat 4.000,00 dinara,a svaki naredni 5.000,00 dinara.<br></br> Za modne revije, snimanje spota i sl. 30.000,00 dinara u trajanju od 5 dana.</Card.Text>
     </Card.Body>
     <Card.Footer>
-      <small className="text-muted">ID Muzeja: {museum.id}</small>
+      <small className="text-muted">ID Muzeja: {auditorium.museumId}</small>
     </Card.Footer>
   </Card>
                     
@@ -62,16 +61,16 @@ class AllMuseums extends Component {
                     }
  
     render(){
-      const museumDetails = this.getAllMuseums();
-      const museums =<Container className= "container-cards"> {museumDetails} </Container>;
+      const auditoriumDetails = this.getAllAuditoriums();
+      const auditoriums =<Container className= "container-cards"> {auditoriumDetails} </Container>;
       return (
         
                   <CardGroup>
-                  {museums}
+                  {auditoriums}
                   </CardGroup>   
   
       );
   }
 }
 
-export default AllMuseums;
+export default AllAuditoriums;

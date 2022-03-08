@@ -12,6 +12,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import AllMuseums from './components/museum/MuseumActions/AllMuseums';
+import AllAuditoriums from './components/museum/AuditoriumActions/AllAuditoriums';
+import AllExhibitions from './components/museum/Exhibitions/AllExhibitions';
+import AllExhibits from './components/museum/ExhibitActions/AllExhibits';
 
 function App() {
   return (
@@ -21,6 +24,10 @@ function App() {
       <Routes>
       <Route exact path="/" element={<HomePage />} />
       <Route exact path="/museums" element={<AllMuseums />} />
+      <Route exact path="/auditoriums" element={<AllAuditoriums />} />
+      <Route exact path="/exhibitions" element={<AllExhibitions />} />
+      <Route exact path="/exhibits" element={<AllExhibits />} />
+      
       </Routes>
     </div>
     <Footer />
