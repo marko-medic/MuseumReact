@@ -4,23 +4,24 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Link,
+  Navigate,
+  ProtectedRoutes,
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
+import AllMuseums from './components/museum/MuseumActions/AllMuseums';
 
 function App() {
   return (
   <React.Fragment>
     <Header />
     <div className="set-overflow-y">
-    <BrowserRouter>
       <Routes>
-      <Route path="/" element={<HomePage />} />
+      <Route exact path="/" element={<HomePage />} />
+      <Route exact path="/museums" element={<AllMuseums />} />
       </Routes>
-      </BrowserRouter>
     </div>
     <Footer />
   </React.Fragment>

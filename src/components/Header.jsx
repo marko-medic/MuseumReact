@@ -15,12 +15,12 @@ class Header extends Component {
         return (
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-            <Navbar.Brand href="#home">Muzeji Srbije</Navbar.Brand>
+            <Navbar.Brand href="/">Muzeji Srbije</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="me-auto">
                 <NavDropdown title="Muzeji" id="collasible-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1">Prikazi muzeje</NavDropdown.Item>
+                  <NavDropdown.Item href="/museums">Prikazi muzeje</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action/3.2">Dodaj muzej</NavDropdown.Item>
                   <NavDropdown.Item href="#action/3.3">Izmeni muzej</NavDropdown.Item>
