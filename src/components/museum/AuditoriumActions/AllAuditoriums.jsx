@@ -29,7 +29,7 @@ class AllAuditoriums extends Component {
         return response.json();
         })
         .then(data => {
-          NotificationManager.success('Successfuly fetched data');
+          NotificationManager.success('Uspešno učitani podaci!');
           if (data) {
             this.setState({ 
                 auditoriums: data,
@@ -37,7 +37,7 @@ class AllAuditoriums extends Component {
             }
         })
         .catch(response => {
-            NotificationManager.error(response.message || response.statusText);
+            NotificationManager.error("Proverite konkeciju! Nije moguće prikupiti podatke!");
             this.setState({ submitted: false });
         });
     }

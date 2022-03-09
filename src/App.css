@@ -237,6 +237,30 @@
   margin: 2%;
 }
 
+.after-add-museum {
+  padding-top: 450px;
+}
+
+.form-header {
+  text-align: center;
+  margin: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: #349afa;
+  border-radius: 16px;
+  color: white;
+}
+
+.container-add-museum {
+  background: url("D:\Cetvrta Godina\Internet Prtogramiranje\GitMuseumReact\MuseumReact\src\resource\museum.jpg");
+  opacity: 0.8;
+}
+
+.form-add-museum {
+  padding-left: 25%;
+  padding-right: 25%;
+}
+
 @media (max-width: 991px) {
   .site-footer [class^="col-"] {
     margin-bottom: 30px;
