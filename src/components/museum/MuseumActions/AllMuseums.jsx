@@ -1,18 +1,55 @@
 import React, { Component } from 'react';
 import { NotificationManager } from 'react-notifications';
 import { serviceConfig } from "../../../appSettings";
-import { Container, Card, CardGroup, Button,ResponsiveEmbed, CardDeck} from 'react-bootstrap';
+import { Container, Card, CardGroup, Button} from 'react-bootstrap';
+
 
 class AllMuseums extends Component {
     constructor(props) {
       super(props);
       this.state = {
-        museums: []
+        museums: [],
+        redirect: false
       };
+      this.removeMuseum = this.removeMuseum.bind(this);
+      this.editMuseum = this.editMuseum.bind(this);
     }
 
     componentDidMount() {
-       this.getMuseums();
+      this.getMuseums();
+   }
+
+   editMuseum(id){
+    this.props.history.push(`editmuseum/${id}`);
+
+  }
+
+    removeMuseum(id) {
+      const requestOptions = {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+       
+    };
+
+    fetch(`${serviceConfig.baseURL}/api/Museums/${id}`, requestOptions)
+        .then(response => {
+            if (!response.ok) {
+                return Promise.reject(response);
+            }
+            return response.statusText;
+        })
+        .then(result => {
+            NotificationManager.success('Uspesno obrisan muzej ciji je ID: '+ id + "Refresujte stranicu kako biste videli preostale muzeje");
+            const newState = this.state.museums.filter(museum => {
+                return museum.id !== id;
+            })
+        })
+        .catch(response => {
+            NotificationManager.error("Nije moguce obrisati muzej");
+            this.setState({ submitted: false });
+        });
     }
 
     getMuseums() {
@@ -55,6 +92,11 @@ class AllMuseums extends Component {
     </Card.Body>
     <Card.Footer>
       <small className="text-muted">ID Muzeja: {museum.id}</small>
+      <br></br>
+ <Button variant="dark"  width = "1%" className="text-center cursor-pointer btn-style" 
+ onClick={() => this.editMuseum(museum.id)} > Izmeni muzej</Button>
+
+ <Button variant="dark"  width = "1%" className="text-center cursor-pointer btn-style" onClick={() => this.removeMuseum(museum.id)} > Obrisi muzej</Button>
     </Card.Footer>
   </Card>
                     

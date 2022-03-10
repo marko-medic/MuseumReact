@@ -144,6 +144,10 @@
   padding-bottom: 40px;
 }
 
+.btn-style {
+  margin: 1% 2% 1% 0;
+}
+
 /* F O O T E R */
 .site-footer {
   background-color: #26272b;
@@ -238,7 +242,7 @@
 }
 
 .after-add-museum {
-  padding-top: 450px;
+  padding-top: 400px;
 }
 
 .form-header {

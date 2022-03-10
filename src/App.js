@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
 import {
-  BrowserRouter,
-  Routes,
+  Switch,
   Route,
-  Navigate,
-  ProtectedRoutes,
+  Redirect
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-notifications/lib/notifications.css';
@@ -19,20 +17,29 @@ import AllAuditoriums from './components/museum/AuditoriumActions/AllAuditoriums
 import AllExhibitions from './components/museum/Exhibitions/AllExhibitions';
 import AllExhibits from './components/museum/ExhibitActions/AllExhibits';
 import AddMuseum from './components/museum/MuseumActions/AddMuseum';
+import EditMuseum from './components/museum/MuseumActions/EditMuseum';
 
 function App() {
   return (
   <React.Fragment>
     <Header />
     <div className="set-overflow-y">
-      <Routes>
-      <Route exact path="/" element={<HomePage />} />
-      <Route exact path="/museums" element={<AllMuseums />} />
-      <Route exact path="/auditoriums" element={<AllAuditoriums />} />
-      <Route exact path="/exhibitions" element={<AllExhibitions />} />
-      <Route exact path="/exhibits" element={<AllExhibits />} />
-      <Route exact path="/addmuseum" element={<AddMuseum />} />
-      </Routes>
+    <Switch>
+      <Redirect exact from="/" to="home" />
+      <Route path='/home' component = {HomePage} />
+      <Redirect exact from="/" to="museums" />
+      <Route exact path="/museums" component={AllMuseums} />
+      <Redirect exact from="/" to="auditoriums" />
+      <Route exact path="/auditoriums" component={AllAuditoriums} />
+      <Redirect exact from="/" to="exhibitions" />
+      <Route exact path="/exhibitions" component={AllExhibitions} />
+      <Redirect exact from="/" to="exhibits" />
+      <Route exact path="/exhibits" component={AllExhibits } />
+      <Redirect exact from="/" to="addmuseum" />
+      <Route exact path="/addmuseum" component={AddMuseum } />
+      <Redirect exact from="/" to="editmuseum" />
+      <Route exact path="/editmuseum/:id" component={EditMuseum } />
+    </Switch>
       <NotificationContainer/>
     </div>
     <Footer />
