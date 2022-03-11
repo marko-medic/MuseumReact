@@ -18,6 +18,8 @@ import AllExhibitions from './components/museum/Exhibitions/AllExhibitions';
 import AllExhibits from './components/museum/ExhibitActions/AllExhibits';
 import AddMuseum from './components/museum/MuseumActions/AddMuseum';
 import EditMuseum from './components/museum/MuseumActions/EditMuseum';
+import AddExhibit from './components/museum/ExhibitActions/AddExhibit';
+import EditExhibit from './components/museum/ExhibitActions/EditExhibit';
 
 function App() {
   return (
@@ -39,6 +41,10 @@ function App() {
       <Route exact path="/addmuseum" component={AddMuseum } />
       <Redirect exact from="/" to="editmuseum" />
       <Route exact path="/editmuseum/:id" component={EditMuseum } />
+      <Redirect exact from="/" to="addexhibit" />
+      <Route exact path="/addexhibit" component={AddExhibit } />
+      <Redirect exact from="/" to="editexhibit" />
+      <Route exact path="/editexhibit/:id" component={EditExhibit } />
     </Switch>
       <NotificationContainer/>
     </div>

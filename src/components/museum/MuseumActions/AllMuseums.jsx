@@ -41,10 +41,11 @@ class AllMuseums extends Component {
             return response.statusText;
         })
         .then(result => {
-            NotificationManager.success('Uspesno obrisan muzej ciji je ID: '+ id + "Refresujte stranicu kako biste videli preostale muzeje");
+            NotificationManager.success("Uspesno obrisan muzej ciji je ID: "+ id);
             const newState = this.state.museums.filter(museum => {
                 return museum.id !== id;
             })
+            window.location.reload();
         })
         .catch(response => {
             NotificationManager.error("Nije moguce obrisati muzej");

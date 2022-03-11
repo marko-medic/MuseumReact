@@ -33,7 +33,7 @@ class Header extends Component {
                 <NavDropdown title="Eksponati" id="collasible-nav-dropdown">
                   <NavDropdown.Item href="/exhibits">Prikazi eksponate</NavDropdown.Item>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action/3.2">Dodaj eksponat</NavDropdown.Item>
+                  <NavDropdown.Item href="/addexhibit">Dodaj eksponat</NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>

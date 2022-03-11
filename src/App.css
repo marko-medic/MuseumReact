@@ -148,6 +148,11 @@
   margin: 1% 2% 1% 0;
 }
 
+.btn-style-2 {
+  margin-top: -3%;
+  margin-left: 2%;
+}
+
 /* F O O T E R */
 .site-footer {
   background-color: #26272b;
@@ -257,6 +262,10 @@
 
 .container-add-museum {
   background: url("D:\Cetvrta Godina\Internet Prtogramiranje\GitMuseumReact\MuseumReact\src\resource\museum.jpg");
+  opacity: 0.8;
+}
+.container-add-exhibit {
+  background: url("C:\Users\PC\Desktop\testreact\MuseumReact\src\resource\apollo-and-the-muses-gc92f5c918_1920.jpg");
   opacity: 0.8;
 }
 

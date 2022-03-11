@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NotificationManager } from 'react-notifications';
 import { serviceConfig } from "../../../appSettings";
-import { Container, Card, CardGroup} from 'react-bootstrap';
+import { Container, Card, CardGroup, Button} from 'react-bootstrap';
 
 class AllExhibits extends Component {
     constructor(props) {
@@ -14,6 +14,40 @@ class AllExhibits extends Component {
     componentDidMount() {
        this.getExhibits();
     }
+
+    editExhibit(id){
+      this.props.history.push(`editexhibit/${id}`);
+  
+    }
+  
+      removeExhibit(id) {
+        const requestOptions = {
+          method: 'DELETE',
+          headers: {
+              'Content-Type': 'application/json'
+          }
+         
+      };
+  
+      fetch(`${serviceConfig.baseURL}/api/Exhabit/${id}`, requestOptions)
+          .then(response => {
+              if (!response.ok) {
+                  return Promise.reject(response);
+              }
+              return response.statusText;
+          })
+          .then(result => {
+              NotificationManager.success("Uspesno obrisan eksponat!");
+              const newState = this.state.exhibits.filter(exhibit => {
+                  return exhibit.id !== id;
+              })
+              window.location.reload();
+          })
+          .catch(response => {
+              NotificationManager.error("Nije moguce obrisati eksponat!");
+              this.setState({ submitted: false });
+          });
+      }
 
     getExhibits() {
       const requestOptions = {
@@ -45,7 +79,7 @@ class AllExhibits extends Component {
     getAllExhibits() {
       console.log(this.state);
       return this.state.exhibits.map(exhibit => {
-          return <Card className="bg-dark text-white adding-padding">
+          return <div><Card className="bg-dark text-white adding-padding">
           <Card.Img src={exhibit.picture} />
           <Card.ImgOverlay>
             <Card.Title>{exhibit.name}</Card.Title>
@@ -54,6 +88,11 @@ class AllExhibits extends Component {
             </Card.Text>
           </Card.ImgOverlay>
         </Card>
+        <Button variant="dark"  width = "1%" className="text-center cursor-pointer btn-style-2" 
+ onClick={() => this.editExhibit(exhibit.id)} > Izmeni eksponat</Button>
+      <Button variant="dark"  width = "1%" className="text-center cursor-pointer btn-style-2" 
+onClick={() => this.removeExhibit(exhibit.id)} > Obrisi eksponat</Button>
+</div>
                     
                       })
                     }
