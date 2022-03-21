@@ -12,9 +12,26 @@ class Header extends Component {
 
 
     render() {
+      const user = JSON.parse(localStorage.getItem('user'));
+      const privileges = {
+        isAdmin: user.role === 'admin',
+        isUser: user.role === 'user',
+        isEditor: user.role === 'editor'
+      }
+      /*
+      
+      npr:
+      <Navbar disabled={privileges.isUser} />
+      <NavDropdown disabled={privileges.isEditor...} />
+      itd...
+      
+      */
+
+      
         return (
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
+             
             <Navbar.Brand href="/home">Muzeji Srbije</Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
